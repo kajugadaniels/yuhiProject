@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YUHI - Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="py-11 bg-[#2E59CA]">
+        {% include 'app/inc/header.html' %}
+    </div>
+
+    <div class="flex h-screen">
+        <div class="w-1/2 h-full flex justify-center items-center px-6 py-12 lg:px-8 bg-gray-100">
+            <div class="sm:w-full sm:max-w-sm">
+                <h2 class="mt-10 text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an account</h2>
+                <span>
+                    {% if msg %}
+                        {{ msg | safe }}
+                    {% else %}
+                        Welcome again
+                    {% endif %}
+
+                    {% if form.errors %}
+                        <div class="alert alert-danger">
+                            <ul>
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <li>{{ field }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            </ul>
+                        </div>
+                    {% endif %}
+                </span>
+                <div class="mt-10 sm:w-full sm:max-w-sm">
+                    <form class="space-y-3" method="POST">
+                        {% csrf_token %}
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Store Manager Name</label>
+                            <div class="mt-2">
+                                {{ form.username }}
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Phone Number</label>
+                            <div class="mt-2">
+                                {{ form.phone_number }}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                            </div>
+                            <div class="mt-2">
+                                {{ form.password1}}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Confirm Password</label>
+                            </div>
+                            <div class="mt-2">
+                                {{ form.password2 }}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    {{ form.is_vendor }}
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="remember" class="text-[#2E59CA]-500 dark:text-gray-700">Vendor</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    {{ form.is_customer }}
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="remember" class="text-[#2E59CA]-500 dark:text-gray-700">Customer</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class="flex w-full justify-center rounded-md bg-[#2E59CA] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#2E59CA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2E59CA]">Register</button>
+                        </div>
+                    </form>
+                    <p class="mt-5 text-center text-sm text-gray-500">
+                        Already have an account
+                        <a href="{% url 'account:login' %}" class="font-semibold leading-6 text-[#2E59CA] hover:text-[#2E59CA]">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="w-1/2 h-full bg-[#2E59CA] flex justify-center items-center">
+            <div class="w-3/4">
+                <img class="mx-auto w-30" src="{% static 'imgs/theme/logo-w.png' %}" alt="Logo">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
