@@ -4,7 +4,7 @@
         <div class="px-4 mx-auto sm:px-6 lg:px-20">
             <div class="flex items-center justify-between h-16 lg:h-20">
                 <div class="flex-shrink-0">
-                    <a href="#" title="" class="flex">
+                    <a href="{% url 'app:home' %}" title="" class="flex">
                         <img class="w-auto h-8" src="{% static 'imgs/theme/logo-w.png' %}" alt="" />
                     </a>
                 </div>
@@ -20,9 +20,9 @@
                 </button>
 
                 <div class="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
-                    <a href="#" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> Home </a>
-                    <a href="#" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> About Us </a>
-                    <a href="#" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> Contact Us </a>
+                    <a href="{% url 'app:home' %}" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> Home </a>
+                    <a href="{% url 'app:about' %}" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> About Us </a>
+                    <a href="{% url 'app:contact' %}" title="" class="text-base font-semibold text-white transition-all duration-200 hover:text-opacity-80"> Contact Us </a>
                 </div>
                 <div class="lg:flex lg:items-center lg:justify-end lg:space-x-6 sm:ml-auto">
                     <a href="{% url 'account:login' %}" title="" class="hidden text-base text-white transition-all duration-200 lg:inline-flex hover:text-opacity-80"> Log in </a>
