@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Third party
     
     # Custom Apps
+    'app',
     'account.apps.AccountConfig',
     'vendor',
 ]
