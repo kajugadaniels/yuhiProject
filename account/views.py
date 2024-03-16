@@ -34,7 +34,7 @@ def user_login(request):
                 return HttpResponse("This is the customer page")
             elif user is not None and user.is_vendor:
                 login(request, user)
-                return redirect('store:dashboard')
+                return redirect('/')
             else:
                 msg= 'invalid credentials'
         else:

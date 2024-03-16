@@ -1,0 +1,34 @@
+{% load static %}
+
+<aside class="navbar-aside" id="offcanvas_aside">
+    <div class="aside-top">
+        <a href="{% url 'vendor:dashboard' %}" class="brand-wrap">
+            <img src="{% static 'imgs/theme/logo-w.png' %}" class="logo" alt="Nest Dashboard" />
+        </a>
+        <div>
+            <button class="btn btn-icon btn-aside-minimize"><i class="text-muted material-icons md-menu_open"></i></button>
+        </div>
+    </div>
+    <nav>
+        <ul class="menu-aside">
+            <li class="menu-item active">
+                <a class="menu-link" href="{% url 'vendor:dashboard' %}">
+                    <i class="icon material-icons md-home"></i>
+                    <span class="text">Dashboard</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{% url 'vendor:dashboard' %}">
+                    <i class="icon material-icons md-storefront"></i>
+                    <span class="text">Stock Records</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a class="menu-link" href="{% url 'vendor:dashboard' %}">
+                    <i class="icon material-icons md-payments"></i>
+                    <span class="text">Sell Item</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>

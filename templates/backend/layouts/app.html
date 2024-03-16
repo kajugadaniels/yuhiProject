@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>YUHI - {% block title %} Dashboard {% endblock %}</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'imgs/theme/favicon.svg' %}" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="screen-overlay"></div>
+    {% include 'backend/inc/sidebar.html' %}
+    <main class="main-wrap">
+        {% include 'backend/inc/header.html' %}
+        {% block content %}
+
+        {% endblock content %}
+        {% include 'backend/inc/footer.html' %}
+    </main>
+
+    <script src="{% static 'js/vendors/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/vendors/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/vendors/jquery.fullscreen.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
