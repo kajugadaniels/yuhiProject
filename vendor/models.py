@@ -12,7 +12,7 @@ class Vendor(models.Model):
     
     store_name = models.CharField(max_length=255, default="Store Name")
     manager_name = models.CharField(max_length=255, default="Enter manager name")
-    phone_number = models.CharField(max_length=20, default="078888888")
+    phone_number = models.CharField(unique=True, max_length=20, default="078888888")
     email = models.EmailField(default="Enter email here")
     address = models.CharField(max_length=255, default="Address here")
     tin_number = models.CharField(max_length=20, default="1234567890")
