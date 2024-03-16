@@ -140,6 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     'site_header': 'YUHI',
+    'site_brand': 'YUHI',
     'site_logo': 'imgs/theme/logo-b.png',
     'copyright': 'Developed by Ida Technology',
 }
