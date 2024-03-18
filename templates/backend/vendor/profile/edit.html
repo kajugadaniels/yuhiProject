@@ -28,31 +28,31 @@
                                             <div class="row gx-3">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_sku" class="form-label">Store Name</label>
-                                                    {{ form.store_name }}
+                                                    {{ vendor.store_name }}
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_color" class="form-label">Store Manager Name</label>
-                                                    <input class="form-control" value="{{ form.instance.user.username }}" disabled>
+                                                    <input class="form-control" value="{{ vendor.instance.user.username }}" disabled>
                                                 </div>
                                             </div>
                                             <div class="row gx-3">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_sku" class="form-label">Store Phone Number</label>
-                                                    {{ form.phone_number }}
+                                                    {{ vendor.phone_number }}
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_color" class="form-label">Store Email</label>
-                                                    {{ form.email }}
+                                                    {{ vendor.email }}
                                                 </div>
                                             </div>
                                             <div class="row gx-3">
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_sku" class="form-label">Store Address</label>
-                                                    {{ form.address }}
+                                                    {{ vendor.address }}
                                                 </div>
                                                 <div class="col-md-6 mb-3">
                                                     <label for="product_color" class="form-label">Store TIN Number</label>
-                                                    {{ form.tin_number }}
+                                                    {{ vendor.tin_number }}
                                                 </div>
                                             </div>
                                         </section>
@@ -61,9 +61,9 @@
                                         <div class="card border-0">
                                             <div class="card-body">
                                                 <div class="input-upload">
-                                                    <img src="{% static 'imgs/theme/upload.svg' %}" alt="" />
+                                                    <img src="{{ vendor.image.url }}" alt="" />
                                                     <br/>
-                                                    {{ form.image }}
+                                                    {{ vendor.image }}
                                                 </div>
                                             </div>
                                         </div>

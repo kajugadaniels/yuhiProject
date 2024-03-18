@@ -12,11 +12,17 @@ def user_register(request):
         if form.is_valid():
             user = form.save()
             
-            vid = uuid.uuid4()
-            vendor = Vendor.objects.create(user=user, vid=vid)
-            
-            msg = 'User created'
-            return redirect('account:login')
+            # Check if a vendor with the same phone number exists
+            phone_number = form.cleaned_data['phone_number']
+            existing_vendor = Vendor.objects.filter(phone_number=phone_number).first()
+            if existing_vendor:
+                msg = 'Vendor with this phone number already exists'
+                # You can handle this case according to your requirements, like showing an error message or redirecting to a different page
+            else:
+                vid = uuid.uuid4()
+                vendor = Vendor.objects.create(user=user, vid=vid)
+                msg = 'User created'
+                return redirect('account:login')
         else:
             msg = 'Form is not valid'
     else:

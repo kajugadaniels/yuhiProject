@@ -35,7 +35,7 @@ def profileEdit(request, vid):
         form = EditProfileForm(instance=vendor_instance)
 
     context = {
-        'form': form,
+        'vendor': form,  # Change 'form' to 'vendor' in the context
     }
     return render(request, 'backend/vendor/profile/edit.html', context)
 
