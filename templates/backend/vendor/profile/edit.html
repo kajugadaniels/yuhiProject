@@ -1,0 +1,82 @@
+{% extends 'backend/layouts/app.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+    <section class="content-main">
+        <div class="row">
+            <div class="col-12">
+                <div class="content-header">
+                    <h2 class="content-title">Edit Profile</h2>
+                    <div>
+                        <a href="#">
+                            <button class="btn btn-md rounded font-sm hover-up">View Profile</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <form method="POST" class=" p-xl-4" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="d-lg-flex">
+                                    <div class="col-lg-8">
+                                        <section class="content-body">
+                                            <div class="row gx-3">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_sku" class="form-label">Store Name</label>
+                                                    {{ form.store_name }}
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_color" class="form-label">Store Manager Name</label>
+                                                    <input class="form-control" value="{{ form.instance.user.username }}" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="row gx-3">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_sku" class="form-label">Store Phone Number</label>
+                                                    {{ form.phone_number }}
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_color" class="form-label">Store Email</label>
+                                                    {{ form.email }}
+                                                </div>
+                                            </div>
+                                            <div class="row gx-3">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_sku" class="form-label">Store Address</label>
+                                                    {{ form.address }}
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="product_color" class="form-label">Store TIN Number</label>
+                                                    {{ form.tin_number }}
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="card border-0">
+                                            <div class="card-body">
+                                                <div class="input-upload">
+                                                    <img src="{% static 'imgs/theme/upload.svg' %}" alt="" />
+                                                    <br/>
+                                                    {{ form.image }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}

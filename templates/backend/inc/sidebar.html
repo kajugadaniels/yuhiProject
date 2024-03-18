@@ -11,20 +11,20 @@
     </div>
     <nav>
         <ul class="menu-aside">
-            <li class="menu-item active">
+            <li class="menu-item {% if request.resolver_match.view_name == 'vendor:dashboard' %}active{% endif %}">
                 <a class="menu-link" href="{% url 'vendor:dashboard' %}">
                     <i class="icon material-icons md-home"></i>
                     <span class="text">Dashboard</span>
                 </a>
             </li>
-            <li class="menu-item">
-                <a class="menu-link" href="{% url 'vendor:dashboard' %}">
+            <li class="menu-item {% if request.resolver_match.view_name == 'vendor:stockRecord' %}active{% endif %}">
+                <a class="menu-link" href="{% url 'vendor:stockRecord' %}">
                     <i class="icon material-icons md-storefront"></i>
                     <span class="text">Stock Records</span>
                 </a>
             </li>
-            <li class="menu-item">
-                <a class="menu-link" href="{% url 'vendor:dashboard' %}">
+            <li class="menu-item {% if request.resolver_match.view_name == 'vendor:sellItem' %}active{% endif %}">
+                <a class="menu-link" href="{% url 'vendor:sellItem' %}">
                     <i class="icon material-icons md-payments"></i>
                     <span class="text">Sell Item</span>
                 </a>

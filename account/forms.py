@@ -24,7 +24,8 @@ class SignUpForm(UserCreationForm):
             attrs={
                 "class": "block w-full rounded-md border-0 px-4 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#2E59CA] sm:text-sm sm:leading-6"
             }
-        )
+        ),
+        required=True,
     )
     phone_number = forms.CharField(
         widget=forms.TextInput(
